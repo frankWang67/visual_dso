@@ -222,6 +222,9 @@ def make_task(task_type, **config_task):
     elif task_type == "control":
         from dso.task.control.control import ControlTask
         task_class = ControlTask
+    elif task_type == "vision_control":
+        from dso.task.control.visual_control import VisionControlTask
+        task_class = VisionControlTask
     else:
         # Custom task import
         task_class = import_custom_source(task_type)
